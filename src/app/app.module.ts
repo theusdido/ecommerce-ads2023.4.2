@@ -11,6 +11,9 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { CategoriaListarComponent } from './categoria/categoria-listar/categoria-listar.component';
 import { CategoriaFormComponent } from './categoria/categoria-form/categoria-form.component';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +27,17 @@ import { CategoriaFormComponent } from './categoria/categoria-form/categoria-for
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyCRyeS7tMcWBXPXXnadzIW_dmbJv7VEik0",
+      authDomain: "e-commerce-ads-2023-4-2.firebaseapp.com",
+      projectId: "e-commerce-ads-2023-4-2",
+      storageBucket: "e-commerce-ads-2023-4-2.appspot.com",
+      messagingSenderId: "13459026214",
+      appId: "1:13459026214:web:8021907e86a79fe70f11e7",
+      measurementId: "G-VJERXGF4K3"
+    }),
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
