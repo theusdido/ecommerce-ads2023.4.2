@@ -31,4 +31,10 @@ export class CategoriaService {
     .remove()
     .then();
   }
+
+  editar(indice:string,dados:any){
+    this.ref().child('/' + indice)
+    .update(dados)
+    .then();
+  }
 }

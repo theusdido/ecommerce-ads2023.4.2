@@ -21,7 +21,11 @@
     <tr *ngFor="let categoria of dados">
         <th scope="row">1</th>
         <td>{{ categoria.descricao }}</td>
-        <td><span class="bi bi-pencil-square"></span></td>
+        <td>
+            <span 
+                class="bi bi-pencil-square"
+                (click)="editar(categoria.indice)"
+            ></span></td>
         <td>
             <span class="bi bi-trash" 
                 (click)="excluir(categoria.indice)"

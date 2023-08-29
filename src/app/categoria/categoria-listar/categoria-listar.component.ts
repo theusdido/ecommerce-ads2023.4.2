@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from '../categoria.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categoria-listar',
@@ -9,7 +10,8 @@ import { CategoriaService } from '../categoria.service';
 export class CategoriaListarComponent implements OnInit {
   public dados:Array<any> = [];
   constructor(
-    public categoria_service:CategoriaService
+    public categoria_service:CategoriaService,
+    public router:Router
   ){}
   
   ngOnInit(): void {
@@ -19,6 +21,7 @@ export class CategoriaListarComponent implements OnInit {
       // Limpa variavel local com os dados
       this.dados.splice(0,this.dados.length);
 
+      console.log( snapshot.val);
       // Dados retornados do Firebase
       let response = snapshot.val();
 
@@ -45,4 +48,9 @@ export class CategoriaListarComponent implements OnInit {
     this.categoria_service.excluir(key);
   }
 
+  editar(key:string){
+    this
+    .router
+    .navigate(['/categoria/form/' + key]);
+  }
 }

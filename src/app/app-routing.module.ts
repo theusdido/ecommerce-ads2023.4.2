@@ -14,7 +14,8 @@ const routes: Routes = [
     children:[
       {path:'' , redirectTo:'listar', pathMatch:'full'},
       {path:'listar', component:CategoriaListarComponent},
-      {path:'form', component:CategoriaFormComponent}
+      {path:'form', component:CategoriaFormComponent},
+      {path:'form/:indice', component:CategoriaFormComponent}
     ]
   }
 ];
