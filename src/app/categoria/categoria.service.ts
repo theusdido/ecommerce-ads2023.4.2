@@ -18,4 +18,7 @@ export class CategoriaService {
     this.ref().push(dados).then();
   }
 
+  listar(){
+    return this.ref();
+  }
 }

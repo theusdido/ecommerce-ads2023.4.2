@@ -13,7 +13,6 @@ export class CategoriaFormComponent {
   ){}
   
   salvar(){
-    debugger
     this.categoria_service.salvar({
       descricao:this.descricao
     });
