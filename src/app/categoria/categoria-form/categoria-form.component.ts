@@ -17,6 +17,9 @@ export class CategoriaFormComponent {
     this.activated_route.params
     .subscribe(
       (params:any) => {
+        // Caso seja um registro novo
+        // interronper o método
+        if (params.indice == undefined) return;
 
         this.categoria_service.ref()
         .child('/' + params.indice)
