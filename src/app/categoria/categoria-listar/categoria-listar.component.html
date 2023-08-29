@@ -22,7 +22,11 @@
         <th scope="row">1</th>
         <td>{{ categoria.descricao }}</td>
         <td><span class="bi bi-pencil-square"></span></td>
-        <td><span class="bi bi-trash"></span></td>
+        <td>
+            <span class="bi bi-trash" 
+                (click)="excluir(categoria.indice)"
+            ></span>
+        </td>
     </tr>
 </tbody>
 </table>

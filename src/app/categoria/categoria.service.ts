@@ -11,7 +11,9 @@ export class CategoriaService {
   ) { }
 
   ref(){
-    return this.firebase_service.ref().child('/categoria');
+    return this.firebase_service
+    .ref()
+    .child('/categoria');
   }
 
   salvar(dados:any){
@@ -20,5 +22,13 @@ export class CategoriaService {
 
   listar(){
     return this.ref();
+  }
+
+  excluir(indice:string){
+    this
+    .ref()
+    .child('/' + indice)
+    .remove()
+    .then();
   }
 }
