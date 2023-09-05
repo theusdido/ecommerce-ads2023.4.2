@@ -18,26 +18,20 @@
     </tr>
 </thead>
 <tbody>
-    <tr>
-    <th scope="row">1</th>
-    <td>Feminina</td>
-    <td><span class="bi bi-pencil-square"></span></td>
-    <td><span class="bi bi-trash"></span></td>
+    <tr *ngFor="let categoria of dados">
+        <th scope="row">1</th>
+        <td>{{ categoria.descricao }}</td>
+        <td>
+            <span 
+                class="bi bi-pencil-square"
+                (click)="editar(categoria.indice)"
+            ></span></td>
+        <td>
+            <span class="bi bi-trash" 
+                (click)="excluir(categoria.indice)"
+            ></span>
+        </td>
     </tr>
-
-    <tr>
-        <th scope="row">2</th>
-        <td>Masculina</td>
-        <td></td>
-        <td></td>
-    </tr>    
-
-    <tr>
-        <th scope="row">3</th>
-        <td>Infantil</td>
-        <td></td>
-        <td></td>
-    </tr>    
 </tbody>
 </table>
 <!-- End Table with hoverable rows -->
