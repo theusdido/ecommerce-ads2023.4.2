@@ -6,6 +6,7 @@ import { CategoriaListarComponent } from './categoria/categoria-listar/categoria
 import { CategoriaFormComponent } from './categoria/categoria-form/categoria-form.component';
 import { SubcategoriaComponent } from './subcategoria/subcategoria.component';
 import { SubcategoriaFormComponent } from './subcategoria/subcategoria-form/subcategoria-form.component';
+import { SubcategoriaListarComponent } from './subcategoria/subcategoria-listar/subcategoria-listar.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent},
@@ -21,7 +22,14 @@ const routes: Routes = [
     ]
   },
   {
-    path:'subcategoria', component:SubcategoriaFormComponent
+    path:'subcategoria', 
+    component:SubcategoriaComponent,
+    children:[
+      {path:'' , redirectTo:'listar', pathMatch:'full'},
+      {path:'listar', component:SubcategoriaListarComponent},
+      {path:'form', component:SubcategoriaFormComponent},
+      {path:'form/:indice', component:SubcategoriaFormComponent}
+    ]
   }
 ];
 

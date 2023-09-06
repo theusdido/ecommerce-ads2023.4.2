@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { CategoriaService } from '../categoria.service';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CategoriaService } from 'src/app/categoria/categoria.service';
+import { SubcategoriaService } from '../subcategoria.service';
 
 @Component({
-  selector: 'app-categoria-listar',
-  templateUrl: './categoria-listar.component.html',
-  styleUrls: ['./categoria-listar.component.scss']
+  selector: 'app-subcategoria-listar',
+  templateUrl: './subcategoria-listar.component.html',
+  styleUrls: ['./subcategoria-listar.component.scss']
 })
-export class CategoriaListarComponent implements OnInit {
+export class SubcategoriaListarComponent {
   public dados:Array<any> = [];
   constructor(
+    public subcategoria_service:SubcategoriaService,
     public categoria_service:CategoriaService,
     public router:Router
   ){}
-  
+
   ngOnInit(): void {
-    this.categoria_service.listar()
+    this.subcategoria_service.listar()
     .on('value',(snapshot:any) => {
 
       // Limpa variavel local com os dados
@@ -31,11 +33,14 @@ export class CategoriaListarComponent implements OnInit {
       // Percorre a coleção de dados 
       Object.values( response )
       .forEach(
-        (e:any,i:number) => {
+        async (e:any,i:number) => {          
+
+          let categoria_descricao:any = await this.categoria_service.get(e.categoria);
           // Adiciona os elementos no vetor
           // de dados
           this.dados.push({
             descricao: e.descricao,
+            categoria: categoria_descricao.descricao,
             indice: Object.keys(snapshot.val())[i]
           });
         }
@@ -44,12 +49,12 @@ export class CategoriaListarComponent implements OnInit {
   }
 
   excluir(key:string){
-    this.categoria_service.excluir(key);
+    this.subcategoria_service.excluir(key);
   }
 
   editar(key:string){
     this
     .router
-    .navigate(['/categoria/form/' + key]);
+    .navigate(['/subcategoria/form/' + key]);
   }
 }

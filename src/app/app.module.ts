@@ -16,6 +16,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { FormsModule } from '@angular/forms';
 import { SubcategoriaComponent } from './subcategoria/subcategoria.component';
 import { SubcategoriaFormComponent } from './subcategoria/subcategoria-form/subcategoria-form.component';
+import { SubcategoriaListarComponent } from './subcategoria/subcategoria-listar/subcategoria-listar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SubcategoriaFormComponent } from './subcategoria/subcategoria-form/subc
     CategoriaListarComponent,
     CategoriaFormComponent,
     SubcategoriaComponent,
-    SubcategoriaFormComponent
+    SubcategoriaFormComponent,
+    SubcategoriaListarComponent
   ],
   imports: [
     BrowserModule,
