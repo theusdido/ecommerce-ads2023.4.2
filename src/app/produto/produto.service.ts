@@ -4,7 +4,7 @@ import { FirebaseService } from '../firebase.service';
 @Injectable({
   providedIn: 'root'
 })
-export class CategoriaService {
+export class ProdutoService {
 
   constructor(
     public firebase_service:FirebaseService
@@ -13,7 +13,7 @@ export class CategoriaService {
   ref(){
     return this.firebase_service
     .ref()
-    .child('/categoria');
+    .child('/produto');
   }
 
   salvar(dados:any){
@@ -49,5 +49,5 @@ export class CategoriaService {
       }
     });
     return dado;
-  }  
+  }
 }

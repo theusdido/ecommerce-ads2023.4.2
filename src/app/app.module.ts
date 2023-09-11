@@ -17,6 +17,9 @@ import { FormsModule } from '@angular/forms';
 import { SubcategoriaComponent } from './subcategoria/subcategoria.component';
 import { SubcategoriaFormComponent } from './subcategoria/subcategoria-form/subcategoria-form.component';
 import { SubcategoriaListarComponent } from './subcategoria/subcategoria-listar/subcategoria-listar.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
+import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { SubcategoriaListarComponent } from './subcategoria/subcategoria-listar/
     CategoriaFormComponent,
     SubcategoriaComponent,
     SubcategoriaFormComponent,
-    SubcategoriaListarComponent
+    SubcategoriaListarComponent,
+    ProdutoComponent,
+    ProdutoFormComponent,
+    ProdutoListarComponent
   ],
   imports: [
     BrowserModule,
