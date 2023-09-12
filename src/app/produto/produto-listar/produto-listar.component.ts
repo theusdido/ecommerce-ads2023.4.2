@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoriaService } from 'src/app/categoria/categoria.service';
+import { ProdutoService } from '../produto.service';
 
 @Component({
   selector: 'app-produto-listar',
@@ -10,12 +11,12 @@ import { CategoriaService } from 'src/app/categoria/categoria.service';
 export class ProdutoListarComponent {
   public dados:Array<any> = [];
   constructor(
-    public categoria_service:CategoriaService,
+    public produto_service:ProdutoService,
     public router:Router
   ){}
 
   ngOnInit(): void {
-    this.categoria_service.listar()
+    this.produto_service.listar()
     .on('value',(snapshot:any) => {
 
       // Limpa variavel local com os dados
@@ -35,7 +36,7 @@ export class ProdutoListarComponent {
           // Adiciona os elementos no vetor
           // de dados
           this.dados.push({
-            descricao: e.descricao,
+            nome: e.nome,
             indice: Object.keys(snapshot.val())[i]
           });
         }
@@ -44,7 +45,7 @@ export class ProdutoListarComponent {
   }
 
   excluir(key:string){
-    this.categoria_service.excluir(key);
+    this.produto_service.excluir(key);
   }
 
   editar(key:string){

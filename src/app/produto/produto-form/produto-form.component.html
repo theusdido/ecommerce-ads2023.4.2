@@ -10,7 +10,10 @@
 <!-- Vertical Form -->
 <form class="row g-3">
     <div class="col-12">  
-        <label for="nome" class="form-label">Nome</label>
+        <label for="nome" class="form-label">
+            Nome
+            <span class="asterisco">*</span>
+        </label>
         <input 
         type="text" 
         class="form-control" 
@@ -20,7 +23,10 @@
         >
     </div>
     <div class="col-12">
-        <label for="nome" class="form-label">Preço</label>
+        <label for="nome" class="form-label">
+            Preço
+            <span class="asterisco">*</span>
+        </label>
         <input 
         type="text" 
         class="form-control" 
@@ -30,7 +36,9 @@
         >
     </div>
     <div class="col-12">
-        <label for="nome" class="form-label">Descrição</label>
+        <label for="nome" class="form-label">
+            Descrição            
+        </label>
         <textarea
         class="form-control" 
         [(ngModel)]="descricao" 
@@ -42,7 +50,10 @@
         <label 
             for="categoria" 
             class="form-label"
-        >Categoria</label>
+        >
+            Categoria
+            <span class="asterisco">*</span>
+        </label>
         <select 
             class="form-control"
             [(ngModel)]="categoria"
