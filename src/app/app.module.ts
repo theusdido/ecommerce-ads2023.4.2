@@ -14,7 +14,10 @@ import { CategoriaFormComponent } from './categoria/categoria-form/categoria-for
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { FormsModule } from '@angular/forms';
-
+import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioFormComponent } from './usuario/usuario-form/usuario-form.component';
+import { UsuarioListarComponent } from './usuario/usuario-listar/usuario-listar.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +27,10 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     CategoriaComponent,
     CategoriaListarComponent,
-    CategoriaFormComponent
+    CategoriaFormComponent,
+    UsuarioComponent,
+    UsuarioFormComponent,
+    UsuarioListarComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,8 @@ import { FormsModule } from '@angular/forms';
       measurementId: "G-VJERXGF4K3"
     }),
     AngularFireStorageModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
