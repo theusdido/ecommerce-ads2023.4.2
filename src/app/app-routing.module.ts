@@ -7,12 +7,18 @@ import { CategoriaFormComponent } from './categoria/categoria-form/categoria-for
 import { UsuarioListarComponent } from './usuario/usuario-listar/usuario-listar.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioFormComponent } from './usuario/usuario-form/usuario-form.component';
+import { SubcategoriaComponent } from './subcategoria/subcategoria.component';
+import { SubcategoriaFormComponent } from './subcategoria/subcategoria-form/subcategoria-form.component';
+import { SubcategoriaListarComponent } from './subcategoria/subcategoria-listar/subcategoria-listar.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.component';
+import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent},
   { path:'home', component:HomeComponent},
   { 
-    path:'categoria', 
+    path:'categoria',
     component:CategoriaComponent,
     children:[
       {path:'' , redirectTo:'listar', pathMatch:'full'},
@@ -29,6 +35,26 @@ const routes: Routes = [
       {path:'listar', component:UsuarioListarComponent},
       {path:'form', component:UsuarioFormComponent},
       {path:'form/:indice', component:UsuarioFormComponent}
+    ]
+  },
+  {
+    path:'subcategoria', 
+    component:SubcategoriaComponent,
+    children:[
+      {path:'' , redirectTo:'listar', pathMatch:'full'},
+      {path:'listar', component:SubcategoriaListarComponent},
+      {path:'form', component:SubcategoriaFormComponent},
+      {path:'form/:indice', component:SubcategoriaFormComponent}
+    ]
+  },
+  { 
+    path:'produto',
+    component:ProdutoComponent,
+    children:[
+      {path:'' , redirectTo:'listar', pathMatch:'full'},
+      {path:'listar', component:ProdutoListarComponent},
+      {path:'form', component:ProdutoFormComponent},
+      {path:'form/:indice', component:ProdutoFormComponent}
     ]
   },  
 ];

@@ -18,6 +18,13 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioFormComponent } from './usuario/usuario-form/usuario-form.component';
 import { UsuarioListarComponent } from './usuario/usuario-listar/usuario-listar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SubcategoriaComponent } from './subcategoria/subcategoria.component';
+import { SubcategoriaFormComponent } from './subcategoria/subcategoria-form/subcategoria-form.component';
+import { SubcategoriaListarComponent } from './subcategoria/subcategoria-listar/subcategoria-listar.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
+import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +37,13 @@ import { HttpClientModule } from '@angular/common/http';
     CategoriaFormComponent,
     UsuarioComponent,
     UsuarioFormComponent,
-    UsuarioListarComponent
+    UsuarioListarComponent,
+    SubcategoriaComponent,
+    SubcategoriaFormComponent,
+    SubcategoriaListarComponent,
+    ProdutoComponent,
+    ProdutoFormComponent,
+    ProdutoListarComponent
   ],
   imports: [
     BrowserModule,
