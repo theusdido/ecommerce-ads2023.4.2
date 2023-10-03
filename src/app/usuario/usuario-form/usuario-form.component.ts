@@ -8,15 +8,10 @@ import { UsuarioService } from '../usuario.service';
 })
 export class UsuarioFormComponent {
   public indice:string  = '';
-  // public nome:string    = '';
-  // public email:string   = '';
-  // public login:string   = '';
-  // public senha:string   = '';
-
-  public nome:string    = 'Edilson Bitencourt';
-  public email:string   = 'edilson@teia.tec.br';
-  public login:string   = 'edilson.bitencourt';
-  public senha:string   = '123456';
+  public nome:string    = '';
+  public email:string   = '';
+  public login:string   = '';
+  public senha:string   = '';
 
   constructor(
     private usuario_service:UsuarioService

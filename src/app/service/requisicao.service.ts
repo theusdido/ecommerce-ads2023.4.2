@@ -17,6 +17,6 @@ export class RequisicaoService {
       })
     };
 
-    return this.http.post('/' + rota,formData,httpOptions);
+    return this.http.post('/requisicao/' + rota,formData,httpOptions);
   }
 }

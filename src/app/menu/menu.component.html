@@ -8,7 +8,20 @@
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#administracao-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Administração</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="administracao-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/usuario">
+              <i class="bi bi-circle"></i><span>Usuário</span>
+            </a>
+          </li>
+        </ul>
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#mercadoria-nav" data-bs-toggle="collapse" href="#">
@@ -31,6 +44,37 @@
             </a>
           </li>
         </ul>
-      </li><!-- End Components Nav -->
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#comercial-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Comercial</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="comercial-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/cliente">
+              <i class="bi bi-circle"></i><span>Cliente</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pedido">
+              <i class="bi bi-circle"></i><span>Pedido</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#financeiro-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Financeiro</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="financeiro-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/formapagamento">
+              <i class="bi bi-circle"></i><span>Forma de Pagamento</span>
+            </a>
+          </li>
+        </ul>
+      </li>
     </ul>
-  </aside><!-- End Sidebar-->
+  </aside>
