@@ -19,22 +19,30 @@ export class UsuarioFormComponent {
 
   salvar(){
 
+    //this.usuario_service.get();
+    //return;
     if (this.nome == ''){
       document.querySelector('#nome')
       ?.classList.add('has-error');
       return;
     }
 
-    const fd = new FormData();
-    fd.append('nome',this.nome);
-    fd.append('email',this.email);
-    fd.append('login',this.login);
-    fd.append('senha',this.senha);
+    let dados = {
+      nome:this.nome,
+      email:this.email,
+      login:this.login,
+      senha:this.senha
+    };
+    //const fd = new FormData();
+    //fd.append('nome',this.nome);
+    //fd.append('email',this.email);
+    //fd.append('login',this.login);
+    //fd.append('senha',this.senha);
 
     if (this.indice == ''){
-      this.usuario_service.salvar(fd).subscribe();
+      this.usuario_service.salvar(dados).subscribe();
     }else{
-      this.usuario_service.editar(this.indice,fd);
+      this.usuario_service.editar(this.indice,dados);
     }
 
   }

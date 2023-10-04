@@ -9,14 +9,19 @@ export class RequisicaoService {
   constructor(
     public http:HttpClient
   ) { }
+  
+  get(){
+    this.http.get("/").subscribe();
+  }
 
   post(formData:any,rota:string = ''){
     const httpOptions = {
       headers: new HttpHeaders({
-        'Access-Control-Allow-Origin':'*'
+        'Access-Control-Allow-Origin' : '*',
+        'Content-Type': 'application/json'
       })
     };
 
-    return this.http.post('/requisicao/' + rota,formData,httpOptions);
+    return this.http.post('http://localhost:8080/' + rota,formData,httpOptions);
   }
 }
