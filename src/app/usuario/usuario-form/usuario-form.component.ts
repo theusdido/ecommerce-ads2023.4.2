@@ -8,15 +8,10 @@ import { UsuarioService } from '../usuario.service';
 })
 export class UsuarioFormComponent {
   public indice:string  = '';
-  // public nome:string    = '';
-  // public email:string   = '';
-  // public login:string   = '';
-  // public senha:string   = '';
-
-  public nome:string    = 'Edilson Bitencourt';
-  public email:string   = 'edilson@teia.tec.br';
-  public login:string   = 'edilson.bitencourt';
-  public senha:string   = '123456';
+  public nome:string    = '';
+  public email:string   = '';
+  public login:string   = '';
+  public senha:string   = '';
 
   constructor(
     private usuario_service:UsuarioService
@@ -24,22 +19,30 @@ export class UsuarioFormComponent {
 
   salvar(){
 
+    //this.usuario_service.get();
+    //return;
     if (this.nome == ''){
       document.querySelector('#nome')
       ?.classList.add('has-error');
       return;
     }
 
-    const fd = new FormData();
-    fd.append('nome',this.nome);
-    fd.append('email',this.email);
-    fd.append('login',this.login);
-    fd.append('senha',this.senha);
+    let dados = {
+      nome:this.nome,
+      email:this.email,
+      login:this.login,
+      senha:this.senha
+    };
+    //const fd = new FormData();
+    //fd.append('nome',this.nome);
+    //fd.append('email',this.email);
+    //fd.append('login',this.login);
+    //fd.append('senha',this.senha);
 
     if (this.indice == ''){
-      this.usuario_service.salvar(fd).subscribe();
+      this.usuario_service.salvar(dados).subscribe();
     }else{
-      this.usuario_service.editar(this.indice,fd);
+      this.usuario_service.editar(this.indice,dados);
     }
 
   }

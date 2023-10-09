@@ -10,11 +10,15 @@ export class UsuarioService {
     private requisicao_service:RequisicaoService
   ) { }
 
-  salvar(fd:FormData){
+  salvar(fd:any){
     return this.requisicao_service.post(fd,'usuario');
   }
 
-  editar(indice:string,fd:FormData){
+  editar(indice:string,fd:any){
 
+  }
+
+  get(){
+    this.requisicao_service.get();
   }
 }

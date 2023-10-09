@@ -1,0 +1,8 @@
+{
+    "/requisicao/":{
+        "target": "http://localhost:8080/usuario",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }    
+}
