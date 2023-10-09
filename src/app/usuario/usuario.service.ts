@@ -19,6 +19,15 @@ export class UsuarioService {
   }
 
   get(){
-    this.requisicao_service.get();
+    
   }
+
+  listar(){
+    return this.requisicao_service.get('/usuario/listar');
+  }
+
+  excluir(_id:number){
+    return this.requisicao_service.del('/usuario/'+_id);
+  }
+  
 }

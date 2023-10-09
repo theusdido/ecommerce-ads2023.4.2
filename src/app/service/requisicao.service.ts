@@ -10,8 +10,8 @@ export class RequisicaoService {
     public http:HttpClient
   ) { }
   
-  get(){
-    this.http.get("/").subscribe();
+  get(_rota:string = '/'){
+    return this.http.get("http://localhost:8080" + _rota);
   }
 
   post(formData:any,rota:string = ''){
@@ -23,5 +23,9 @@ export class RequisicaoService {
     };
 
     return this.http.post('http://localhost:8080/' + rota,formData,httpOptions);
+  }
+
+  del(_rota:string){
+    return this.http.delete("http://localhost:8080" + _rota);
   }
 }
