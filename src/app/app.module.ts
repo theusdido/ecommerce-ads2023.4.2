@@ -24,6 +24,7 @@ import { SubcategoriaListarComponent } from './subcategoria/subcategoria-listar/
 import { ProdutoComponent } from './produto/produto.component';
 import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
 import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.component';
+import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.
     SubcategoriaListarComponent,
     ProdutoComponent,
     ProdutoFormComponent,
-    ProdutoListarComponent
+    ProdutoListarComponent,
+    AutenticacaoComponent
   ],
   imports: [
     BrowserModule,

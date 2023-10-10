@@ -1,0 +1,32 @@
+<!-- Vertical Form -->
+<form class="row g-3">
+  <div class="col-12">
+    <label for="login" class="form-label">Login</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      [(ngModel)]="login" 
+      name="login"
+      id="login"
+    >
+  </div>
+  <div class="col-12">
+    <label for="senha" class="form-label">Senha</label>
+    <input 
+      type="password" 
+      class="form-control" 
+      [(ngModel)]="senha" 
+      name="senha"
+      id="senha"
+    >
+  </div>  
+</form><!-- Vertical Form -->
+<div>
+    <button 
+        class="btn btn-success"
+        (click)="entrar()"
+    >
+        <span class="bi bi-check"></span>
+        Entrar
+    </button>
+</div>

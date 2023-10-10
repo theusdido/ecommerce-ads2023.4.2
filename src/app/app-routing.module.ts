@@ -13,6 +13,7 @@ import { SubcategoriaListarComponent } from './subcategoria/subcategoria-listar/
 import { ProdutoComponent } from './produto/produto.component';
 import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.component';
 import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
+import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent},
@@ -56,7 +57,10 @@ const routes: Routes = [
       {path:'form', component:ProdutoFormComponent},
       {path:'form/:indice', component:ProdutoFormComponent}
     ]
-  },  
+  },
+  {
+    path:'login',component:AutenticacaoComponent
+  }
 ];
 
 @NgModule({
