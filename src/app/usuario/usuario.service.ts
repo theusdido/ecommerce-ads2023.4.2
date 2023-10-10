@@ -14,12 +14,12 @@ export class UsuarioService {
     return this.requisicao_service.post(fd,'usuario');
   }
 
-  editar(indice:string,fd:any){
-
+  editar(fd:any,id:number){
+    return this.requisicao_service.put(fd,'usuario/' + id);
   }
 
-  get(){
-    
+  load(id:number){
+    return this.requisicao_service.get('/usuario/load/' + id);
   }
 
   listar(){

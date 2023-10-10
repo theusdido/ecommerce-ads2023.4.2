@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuario-listar',
@@ -10,16 +11,18 @@ export class UsuarioListarComponent implements OnInit {
   public dados:Array<any> = [];
 
   constructor(
-    private usuario_service:UsuarioService
-  ){
+    private usuario_service:UsuarioService,
+    private router:Router
+  ){}
 
-  }
   ngOnInit(): void {
       this.listar();
   }
 
-  editar(_indice:number){
-
+  editar(_id:number){
+    this
+    .router
+    .navigate(['/usuario/form/' + _id]);
   }
 
   excluir(_id:number){
