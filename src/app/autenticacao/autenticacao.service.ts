@@ -16,4 +16,5 @@ export class AutenticacaoService {
       senha:senha
     },'auth');
   }
+  
 }
