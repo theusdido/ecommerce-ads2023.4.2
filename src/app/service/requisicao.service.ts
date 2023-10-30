@@ -10,20 +10,21 @@ export class RequisicaoService {
     public http:HttpClient
   ) { }
   
-  get(_rota:string = '/'){
-    return this.http.get("http://localhost:8080" + _rota);
+  get(_rota:string = '/',_params:any = {}){
+    return this.http.get(
+      "http://localhost:8080" + _rota,
+      {params:_params}
+    );
   }
 
   post(formData:any,rota:string = ''){
-    const httpOptions = {
+    const httpOptions = {      
       headers: new HttpHeaders({
         'Access-Control-Allow-Origin' : '*',
-        'Access-Control-Allow-Credentials' : 'true',
         'Content-Type': 'application/json'
       })
     };
-
-    return this.http.post('http://localhost:8080/' + rota,formData,httpOptions);
+    return this.http.post('http://localhost:8080' + rota,formData,httpOptions);
   }
 
   del(_rota:string){

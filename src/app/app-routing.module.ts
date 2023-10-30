@@ -14,13 +14,18 @@ import { ProdutoComponent } from './produto/produto.component';
 import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.component';
 import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
 import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
+import { GuardService } from './service/guard.service';
 
 const routes: Routes = [
-  { path:'', component:HomeComponent},
-  { path:'home', component:HomeComponent},
+  { path:'', component:HomeComponent , canActivateChild:[GuardService]},
+  { 
+    path:'home', component:HomeComponent,
+    canActivate:[GuardService]
+  },
   { 
     path:'categoria',
     component:CategoriaComponent,
+    canActivate:[GuardService],
     children:[
       {path:'' , redirectTo:'listar', pathMatch:'full'},
       {path:'listar', component:CategoriaListarComponent},

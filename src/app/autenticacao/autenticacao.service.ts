@@ -5,7 +5,7 @@ import { RequisicaoService } from '../service/requisicao.service';
   providedIn: 'root'
 })
 export class AutenticacaoService {
-
+  public is_logged:boolean = false;
   constructor(
     public requisicao_service:RequisicaoService
   ) {}
@@ -14,7 +14,17 @@ export class AutenticacaoService {
     return this.requisicao_service.post({
       email:usuario,
       senha:senha
-    },'auth');
+    },'/auth');
   }
   
+  logon(){
+    this.is_logged = true;
+  }
+
+  verifyToken(){
+    return this.requisicao_service
+    .get('/auth/verifytoken',{
+      token:sessionStorage.getItem('token')
+    });
+  }  
 }
