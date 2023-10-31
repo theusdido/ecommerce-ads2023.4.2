@@ -7,6 +7,21 @@
         Novo
     </button>
 </div>
+<form>
+    <fieldset>
+        <legend>Pesquisar</legend>
+        <input 
+            type="text" 
+            name="termo" 
+            [(ngModel)]="termo"
+        />
+        <input
+            type="button"
+            value="Pesquisar"
+            (click)="pesquisar()"
+        />
+    </fieldset>
+</form>
 <!-- Table with hoverable rows -->
 <table class="table table-hover">
 <thead>

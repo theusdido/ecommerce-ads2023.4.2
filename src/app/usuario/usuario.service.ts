@@ -30,4 +30,8 @@ export class UsuarioService {
     return this.requisicao_service.del('/usuario/'+_id);
   }
   
+  pesquisar(_termo:string){
+    return this.requisicao_service
+    .get('/usuario/pesquisar/' + _termo);
+  }
 }

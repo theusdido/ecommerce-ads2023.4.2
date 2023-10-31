@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class UsuarioListarComponent implements OnInit {
   public dados:Array<any> = [];
+  public termo:string = '';
 
   constructor(
     private usuario_service:UsuarioService,
@@ -40,4 +41,19 @@ export class UsuarioListarComponent implements OnInit {
       }
     );
   }
+
+  pesquisar(){
+    let _termo = this.termo;
+    if (_termo == '') {
+      this.listar();
+      return;
+    }
+    this.usuario_service.pesquisar(_termo)
+    .subscribe(
+      (_dados:any) => {
+        this.dados = _dados;
+      }
+    );
+  }
+
 }
