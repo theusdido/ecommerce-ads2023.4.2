@@ -3,13 +3,12 @@ import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from '@a
 import { Observable, Subject } from 'rxjs';
 import { AutenticacaoService } from '../autenticacao/autenticacao.service';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class GuardService {
   
-  private is_logged:Subject<boolean | UrlTree> = new Subject();
+  public is_logged:Subject<boolean | UrlTree> = new Subject();
 
   constructor(
     public auth_service:AutenticacaoService, 
@@ -23,29 +22,38 @@ export class GuardService {
   | Promise<boolean | UrlTree>
   | boolean
   | UrlTree {
+    let _token = sessionStorage.getItem('token');
+    if (_token == '' || _token == null || _token == undefined){
+      this.goLogin();
+    }
     return this.is_logged;
   }
 
   isLogged(){
     this.auth_service.verifyToken()
-    .subscribe(        
+    .subscribe(
       {
         next: (_res:any) => {
-
           if (_res){
             this.is_logged.next(true);
-          }else{
-            this.goLogin();
           }
         },
-        error: () => {         
-          this.is_logged.next(false);
+        error: () => {
+          this.goError();
         }
       }
     );
   }
 
   goLogin(){
+    this.is_logged.next(false);
     this.router.navigateByUrl('/login');
+  }
+
+  goError(){
+    /*
+      Lógica para enviar o usuário para uma página de erro
+      Semelhante a página de login. Método goLogin()
+    */
   }
 }

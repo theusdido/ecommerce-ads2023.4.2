@@ -11,11 +11,11 @@ export class UsuarioService {
   ) { }
 
   salvar(fd:any){
-    return this.requisicao_service.post(fd,'usuario');
+    return this.requisicao_service.post(fd,'/usuario/salvar');
   }
 
   editar(fd:any,id:number){
-    return this.requisicao_service.put(fd,'usuario/' + id);
+    return this.requisicao_service.put(fd,'/usuario/' + id);
   }
 
   load(id:number){

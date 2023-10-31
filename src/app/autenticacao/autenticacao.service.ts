@@ -16,15 +16,14 @@ export class AutenticacaoService {
       senha:senha
     },'/auth');
   }
-  
+
   logon(){
     this.is_logged = true;
+    location.href = '/home';
   }
 
   verifyToken(){
     return this.requisicao_service
-    .get('/auth/verifytoken',{
-      token:sessionStorage.getItem('token')
-    });
+    .get('/auth/verifytoken/' + sessionStorage.getItem('token'));    
   }  
 }
